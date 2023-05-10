@@ -48,8 +48,8 @@ function Profile() {
                         <li>User Id : <span>{userProfile.id}</span></li>
                         <li>Name : <span>{userProfile.user.name}</span></li>
                         <li>Email : <span>{userProfile.user.email}</span></li>
-                        <li>Join Date : <span>30 Nov 2021</span></li>
-                        <li>Address : <span>425444, Shahada, Nandurbar</span></li>
+                        {/* <li>Join Date : <span>30 Nov 2021</span></li>
+                        <li>Address : <span>425444, Shahada, Nandurbar</span></li> */}
                     </ul>
                </Col>
             </Row>

@@ -19,11 +19,13 @@ function AllAppointment() {
     useEffect(() => {
         const getAppointment = async()=>{
             try{
-                const q = query(collection( db, "Appointments"), where("hospitalId", "==", id))
+                console.log("good")
+                const q = query(collection( db, "Appointments"), where("hospitalId", "==",profile.id))
                 const querySnapshot = await getDocs(q);
                 setAppointments(querySnapshot.docs.map((doc)=>({id:doc.id, data: doc.data()})));
                 setAppointmentLoading(false)
             }catch(e){
+                console.log("erreoe")
                 console.log(e.message)
                 setAppointmentLoading(false)
             }
@@ -38,15 +40,15 @@ function AllAppointment() {
         return <Redirect to="/registerHospital"/>
     }
     
-    if(appointmentloading){
-        return(
-            <Container style={{height:"100vh"}}className="d-flex justify-content-center align-items-center">
-                <Row >
-                        <Spinner animation="grow" variant="info" />
-                </Row>
-            </Container>
-        )
-    }
+    // if(appointmentloading){
+    //     return(
+    //         <Container style={{height:"100vh"}}className="d-flex justify-content-center align-items-center">
+    //             <Row >
+    //                     <Spinner animation="grow" variant="info" />
+    //             </Row>
+    //         </Container>
+    //     )
+    // }
     return (
        <Container className="mt-4">
             <Row className="admin_heading">
